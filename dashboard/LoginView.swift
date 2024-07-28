@@ -64,6 +64,28 @@ struct LoginView: View {
                 }
                 .padding(.horizontal)
                 
+                HStack {
+                    VStack { Divider() }
+                    Text("or")
+                    VStack { Divider() }
+                }
+                
+                Button(action: signInWithGoogle){
+                    HStack{
+                        Image("google")
+                            .resizable()
+                            .frame(width: 20,height: 20)
+                        Text("Sign in with Google")
+                            .bold()
+                            .foregroundColor(Color(.systemBackground))
+                    }
+                    .frame(maxWidth: .infinity)
+                    .padding(.vertical, 15)
+                    .background(Color(.label))
+                    .cornerRadius(8)
+                }
+                .padding(.horizontal)
+                
                 Spacer()
             }
             .padding()
@@ -77,6 +99,12 @@ struct LoginView: View {
     private func signInWithEmailPassword() {
         Task {
             await viewModel.signInWithEmailPassword()
+        }
+    }
+    
+    private func signInWithGoogle() {
+        Task {
+            await viewModel.signInWithGoogle() == true
         }
     }
 }
