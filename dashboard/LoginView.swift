@@ -30,19 +30,8 @@ struct LoginView: View {
                     .foregroundColor(.gray)
                 
                 VStack(spacing: 15) {
-                    TextField("Email", text: $viewModel.email)
-                        .textFieldStyle(PlainTextFieldStyle())
-                        .padding()
-                        .background(Color(.systemGray6))
-                        .cornerRadius(8)
-                        .textInputAutocapitalization(.never)
-                        .disableAutocorrection(true)
-                    
-                    SecureField("Password", text: $viewModel.password)
-                        .textFieldStyle(PlainTextFieldStyle())
-                        .padding()
-                        .background(Color(.systemGray6))
-                        .cornerRadius(8)
+                    DHTextField(placeholder: "Email", text: $viewModel.email)
+                    DHTextField(placeholder: "Password", text: $viewModel.password, isSecure: true)
                 }
                 .padding(.horizontal)
                 
@@ -52,25 +41,8 @@ struct LoginView: View {
                         .foregroundColor(.gray)
                 }
                 
-                Button(action: signInWithEmailPassword) {
-                    if viewModel.authenticationState != .authenticating {
-                        Text("Login")
-                            .customFont(.medium, 16)
-                            .foregroundColor(Color(.systemBackground))
-                            .frame(maxWidth: .infinity)
-                            .padding(.vertical, 15)
-                            .background(Color(.label))
-                            .cornerRadius(8)
-                    } else {
-                        ProgressView()
-                            .progressViewStyle(CircularProgressViewStyle(tint: Color(.systemBackground)))
-                            .frame(maxWidth: .infinity)
-                            .padding(.vertical, 15)
-                            .background(Color(.label))
-                            .cornerRadius(8)
-                    }
-                }
-                .padding(.horizontal)
+                DHPrimaryButton(title: "Login", action: signInWithEmailPassword, isLoading: viewModel.authenticationState == .authenticating)
+                    .padding(.horizontal)
                 
                 HStack {
                     Text("Don't have an account?")
@@ -109,6 +81,7 @@ struct LoginView: View {
         }
     }
 }
+
 
 #Preview {
     LoginView()

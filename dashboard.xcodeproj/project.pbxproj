@@ -36,6 +36,8 @@
 		CCAB454A2C568AEC00298C7A /* SFUIDisplay-Ultralight.otf in Resources */ = {isa = PBXBuildFile; fileRef = CCAB45412C568AEC00298C7A /* SFUIDisplay-Ultralight.otf */; };
 		CCAB454C2C568CEA00298C7A /* FontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAB454B2C568CEA00298C7A /* FontExtension.swift */; };
 		CCAB454E2C568EB900298C7A /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAB454D2C568EB900298C7A /* DashboardView.swift */; };
+		CCBB26AF2C56997200235436 /* DHTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBB26AE2C56997200235436 /* DHTextField.swift */; };
+		CCBB26B12C56999C00235436 /* DHPrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBB26B02C56999B00235436 /* DHPrimaryButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +64,8 @@
 		CCAB45412C568AEC00298C7A /* SFUIDisplay-Ultralight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIDisplay-Ultralight.otf"; sourceTree = "<group>"; };
 		CCAB454B2C568CEA00298C7A /* FontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExtension.swift; sourceTree = "<group>"; };
 		CCAB454D2C568EB900298C7A /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		CCBB26AE2C56997200235436 /* DHTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DHTextField.swift; sourceTree = "<group>"; };
+		CCBB26B02C56999B00235436 /* DHPrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DHPrimaryButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +121,8 @@
 				CCAB45372C56568400298C7A /* EncodableExtension.swift */,
 				CCAB454B2C568CEA00298C7A /* FontExtension.swift */,
 				CCAB454D2C568EB900298C7A /* DashboardView.swift */,
+				CCBB26AE2C56997200235436 /* DHTextField.swift */,
+				CCBB26B02C56999B00235436 /* DHPrimaryButton.swift */,
 			);
 			path = dashboard;
 			sourceTree = "<group>";
@@ -245,11 +251,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCBB26B12C56999C00235436 /* DHPrimaryButton.swift in Sources */,
 				CCAB45362C56543100298C7A /* DHUser.swift in Sources */,
 				CCAB45342C5653DA00298C7A /* AuthenticationViewModel.swift in Sources */,
 				CCAB45152C564C1400298C7A /* ColorExtension.swift in Sources */,
 				CCAB45092C56470000298C7A /* MainView.swift in Sources */,
 				CCAB452E2C5652DE00298C7A /* LoginView.swift in Sources */,
+				CCBB26AF2C56997200235436 /* DHTextField.swift in Sources */,
 				CCAB45382C56568400298C7A /* EncodableExtension.swift in Sources */,
 				CCAB454C2C568CEA00298C7A /* FontExtension.swift in Sources */,
 				CCAB454E2C568EB900298C7A /* DashboardView.swift in Sources */,
