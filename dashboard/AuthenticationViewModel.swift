@@ -23,23 +23,29 @@ enum AuthenticationError: Error {
     case tokenError(message: String)
 }
 
-@Observable @MainActor class AuthenticationViewModel {
-    var firstName = ""
-    var lastName = ""
-    var email = ""
-    var phone = ""
-    var password = ""
-    var confirmPassword = ""
-    var authenticationState: AuthenticationState = .unauthenticated
-    var isValid: Bool  = false
-    var errorMessage: String = ""
-    var currentUserId: String = ""
-    var user: DHUser? = nil
-    var displayName = ""
-    var privacyChecked: Bool = false
+@MainActor
+class AuthenticationViewModel: ObservableObject {
+    @Published var firstName = ""
+    @Published var lastName = ""
+    @Published var email = ""
+    @Published var phone = ""
+    @Published var password = ""
+    @Published var confirmPassword = ""
+    @Published var authenticationState: AuthenticationState = .unauthenticated
+    @Published var isValid: Bool  = false
+    @Published var errorMessage: String = ""
+    @Published var currentUserId: String = ""
+    @Published var user: DHUser? = nil
+    @Published var displayName = ""
+    @Published var privacyChecked: Bool = false
+    @Published var isEmailVerificationSent = false
     
     private var handler: AuthStateDidChangeListenerHandle?
     private var userListener: ListenerRegistration?
+    
+    public var isSignedIn: Bool{
+        return Auth.auth().currentUser != nil
+    }
     
     init(){
         self.handler = Auth.auth().addStateDidChangeListener { [weak self] _, user in
@@ -67,26 +73,31 @@ extension AuthenticationViewModel {
     }
     
     func signUpWithEmailPassword() async -> Bool {
-        
         authenticationState = .authenticating
         
         guard validate() else {
+            authenticationState = .unauthenticated
             return false
         }
         
-        do  {
+        do {
             let result = try await Auth.auth().createUser(withEmail: email, password: password)
+            currentUserId = result.user.uid
             do {
                 try await result.user.sendEmailVerification()
+                isEmailVerificationSent = true
                 print("Verification email sent successfully!")
             } catch {
                 print("Error sending verification email: \(error.localizedDescription)")
+                errorMessage = "Failed to send verification email: \(error.localizedDescription)"
+                authenticationState = .unauthenticated
+                return false
             }
-            insertUserRecord(id: currentUserId)
             
+            insertUserRecord(id: currentUserId)
+            authenticationState = .unauthenticated
             return true
-        }
-        catch {
+        } catch {
             print(error)
             errorMessage = error.localizedDescription
             authenticationState = .unauthenticated
@@ -240,10 +251,6 @@ extension AuthenticationViewModel {
         db.collection(DHUserModelName.userFirestore)
             .document(id)
             .setData(newUser.asDictionary())
-    }
-    
-    public var isSignedIn: Bool{
-        return Auth.auth().currentUser != nil
     }
     
     func signOut() {

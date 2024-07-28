@@ -8,10 +8,107 @@
 import SwiftUI
 
 struct LoginView: View {
+    @StateObject private var viewModel = AuthenticationViewModel()
+    @State private var isSignupView = false
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            VStack(spacing: 20) {
+                Text("Welcome Back")
+                    .customFont(.bold, 28)
+                
+                Text("Some small message which appears\nwhen people were away")
+                    .customFont(.regular, 16)
+                    .multilineTextAlignment(.center)
+                    .foregroundColor(.gray)
+                
+                VStack(spacing: 15) {
+                    DHTextField(placeholder: "Email", text: $viewModel.email)
+                    DHTextField(placeholder: "Password", text: $viewModel.password, isSecure: true)
+                }
+                .padding(.horizontal)
+                
+                Button(action: {}) {
+                    Text("Forgotten Password?")
+                        .customFont(.regular, 14)
+                        .foregroundColor(.gray)
+                }
+                
+                DHPrimaryButton(title: "Login", action: signInWithEmailPassword, isLoading: viewModel.authenticationState == .authenticating)
+                    .padding(.horizontal)
+                
+                HStack {
+                    Text("Don't have an account?")
+                        .customFont(.regular, 16)
+                    
+                    Text("Sign Up")
+                        .customFont(.light, 16)
+                        .foregroundColor(Color.primaryColor)
+                        .onTapGesture {
+                            isSignupView.toggle()
+                        }
+                }
+                .padding(.bottom, 60)
+                
+                Image(systemName: "faceid")
+                    .font(.system(size: 40))
+                
+                Button(action: {}) {
+                    Text("Enabled Face ID")
+                        .customFont(.medium, 16)
+                        .foregroundColor(.white)
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 15)
+                        .background(Color.primaryColor)
+                        .cornerRadius(8)
+                }
+                .padding(.horizontal)
+                
+                HStack {
+                    VStack { Divider() }
+                    Text("or")
+                    VStack { Divider() }
+                }
+                
+                Button(action: signInWithGoogle){
+                    HStack{
+                        Image("google")
+                            .resizable()
+                            .frame(width: 20,height: 20)
+                        Text("Sign in with Google")
+                            .bold()
+                            .foregroundColor(Color(.systemBackground))
+                    }
+                    .frame(maxWidth: .infinity)
+                    .padding(.vertical, 15)
+                    .background(Color(.label))
+                    .cornerRadius(8)
+                }
+                .padding(.horizontal)
+                
+                Spacer()
+            }
+            .padding()
+            .navigationDestination(isPresented: $isSignupView) {
+                SignupView()
+                    .navigationBarBackButtonHidden(true)
+            }
+        }
+    }
+    
+    private func signInWithEmailPassword() {
+        Task {
+            await viewModel.signInWithEmailPassword()
+        }
+    }
+    
+    private func signInWithGoogle() {
+        Task {
+            await viewModel.signInWithGoogle() == true
+        }
     }
 }
+
 
 #Preview {
     LoginView()
