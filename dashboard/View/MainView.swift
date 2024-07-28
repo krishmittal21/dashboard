@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MainView: View {
     @StateObject var viewModel = AuthenticationViewModel()
-    @AppStorage("first_user") var firstTimeUser: Bool = true
+    @AppStorage("first_time_user") var firstTimeUser: Bool = true
     
     var body: some View {
         Group {

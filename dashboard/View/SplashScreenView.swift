@@ -9,25 +9,49 @@ import SwiftUI
 
 struct SplashScreenView: View {
     @State var isActive: Bool = false
+    @StateObject private var authenticationViewModel = AuthenticationViewModel()
     
     var body: some View {
         ZStack {
             if self.isActive {
                 DashboardView()
             } else {
-                Color.primaryColor.edgesIgnoringSafeArea(.all)
-                
-                VStack {
-                    Image(systemName: "app.fill")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 100, height: 100)
-                        .foregroundColor(.white)
+                ZStack(alignment: .top) {
+                    Color(hex: "#ECECEC").ignoresSafeArea()
                     
-                    Text("App Name")
-                        .customFont(.bold, 28)
-                        .foregroundColor(.white)
+                    VStack(alignment: .center, spacing: 20) {
+                        Text("Welcome \(authenticationViewModel.user?.firstName ?? "[userFirstName]")")
+                            .customFont(.light, 25)
+                        
+                        Text("This is your first time using Argus.\nLet us explain what we will do\nand what happens afterwards.")
+                            .customFont(.light, 18)
+                            .multilineTextAlignment(.center)
+                        
+                        Spacer()
+                    }
+                    .padding()
+                    .background(Color.white)
+                    .cornerRadius(3.0)
+                    .padding()
+                    .padding(.bottom, 200)
                 }
+//                .overlay(
+//                    VStack {
+//                        Spacer()
+//                        HStack {
+//                            Spacer()
+//                            Image(systemName: "square.3.layers.3d.top.filled")
+//                                .resizable()
+//                                .frame(width: 40, height: 40)
+//                                .foregroundColor(.purple)
+//                                .padding()
+//                                .background(Color.white)
+//                                .clipShape(Circle())
+//                                .shadow(radius: 5)
+//                        }
+//                    }
+//                    .padding()
+//                )
             }
         }
         .onAppear {
@@ -38,4 +62,8 @@ struct SplashScreenView: View {
             }
         }
     }
+}
+
+#Preview {
+    SplashScreenView()
 }
