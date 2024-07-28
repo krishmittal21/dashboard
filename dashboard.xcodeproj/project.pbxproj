@@ -11,6 +11,7 @@
 		CCAB45092C56470000298C7A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAB45082C56470000298C7A /* ContentView.swift */; };
 		CCAB450B2C56470100298C7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCAB450A2C56470100298C7A /* Assets.xcassets */; };
 		CCAB450E2C56470100298C7A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCAB450D2C56470100298C7A /* Preview Assets.xcassets */; };
+		CCAB45152C564C1400298C7A /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAB45142C564C1400298C7A /* ColorExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		CCAB45082C56470000298C7A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CCAB450A2C56470100298C7A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CCAB450D2C56470100298C7A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CCAB45142C564C1400298C7A /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 				CCAB45082C56470000298C7A /* ContentView.swift */,
 				CCAB450A2C56470100298C7A /* Assets.xcassets */,
 				CCAB450C2C56470100298C7A /* Preview Content */,
+				CCAB45142C564C1400298C7A /* ColorExtension.swift */,
 			);
 			path = dashboard;
 			sourceTree = "<group>";
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCAB45152C564C1400298C7A /* ColorExtension.swift in Sources */,
 				CCAB45092C56470000298C7A /* ContentView.swift in Sources */,
 				CCAB45072C56470000298C7A /* dashboardApp.swift in Sources */,
 			);
