@@ -37,6 +37,7 @@ enum AuthenticationError: Error {
     var user: DHUser? = nil
     var displayName = ""
     var privacyChecked: Bool = false
+    var isEmailVerificationSent = false
     
     private var handler: AuthStateDidChangeListenerHandle?
     private var userListener: ListenerRegistration?
@@ -67,26 +68,31 @@ extension AuthenticationViewModel {
     }
     
     func signUpWithEmailPassword() async -> Bool {
-        
         authenticationState = .authenticating
         
         guard validate() else {
+            authenticationState = .unauthenticated
             return false
         }
         
-        do  {
+        do {
             let result = try await Auth.auth().createUser(withEmail: email, password: password)
+            currentUserId = result.user.uid
             do {
                 try await result.user.sendEmailVerification()
+                isEmailVerificationSent = true
                 print("Verification email sent successfully!")
             } catch {
                 print("Error sending verification email: \(error.localizedDescription)")
+                errorMessage = "Failed to send verification email: \(error.localizedDescription)"
+                authenticationState = .unauthenticated
+                return false
             }
-            insertUserRecord(id: currentUserId)
             
+            insertUserRecord(id: currentUserId)
+            authenticationState = .unauthenticated
             return true
-        }
-        catch {
+        } catch {
             print(error)
             errorMessage = error.localizedDescription
             authenticationState = .unauthenticated

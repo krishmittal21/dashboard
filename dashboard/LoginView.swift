@@ -12,12 +12,6 @@ struct LoginView: View {
     @State private var viewModel = AuthenticationViewModel()
     @State private var isSignupView = false
     
-    private func signInWithEmailPassword() {
-        Task {
-            await viewModel.signInWithEmailPassword()
-        }
-    }
-    
     var body: some View {
         NavigationStack {
             VStack(spacing: 20) {
@@ -78,6 +72,12 @@ struct LoginView: View {
                 SignupView()
                     .navigationBarBackButtonHidden(true)
             }
+        }
+    }
+    
+    private func signInWithEmailPassword() {
+        Task {
+            await viewModel.signInWithEmailPassword()
         }
     }
 }
