@@ -72,7 +72,7 @@ extension AuthenticationViewModel {
         
         let db = Firestore.firestore()
         
-        db.collection("users")
+        db.collection(DHUserModelName.userFirestore)
             .document(id)
             .setData(newUser.asDictionary())
     }
