@@ -7,9 +7,8 @@
 
 import SwiftUI
 
-@MainActor
 struct LoginView: View {
-    @State private var viewModel = AuthenticationViewModel()
+    @StateObject private var viewModel = AuthenticationViewModel()
     @State private var isSignupView = false
     
     var body: some View {

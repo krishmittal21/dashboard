@@ -7,10 +7,9 @@
 
 import SwiftUI
 
-@MainActor
 struct SignupView: View {
     @Environment(\.dismiss) private var dismiss
-    @State private var viewModel = AuthenticationViewModel()
+    @StateObject private var viewModel = AuthenticationViewModel()
     
     var body: some View {
         ScrollView {
