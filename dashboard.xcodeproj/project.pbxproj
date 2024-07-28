@@ -38,6 +38,7 @@
 		CCAB454E2C568EB900298C7A /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAB454D2C568EB900298C7A /* DashboardView.swift */; };
 		CCBB26AF2C56997200235436 /* DHTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBB26AE2C56997200235436 /* DHTextField.swift */; };
 		CCBB26B12C56999C00235436 /* DHPrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBB26B02C56999B00235436 /* DHPrimaryButton.swift */; };
+		CCBB26BE2C56A8DF00235436 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBB26BD2C56A8DF00235436 /* SplashScreenView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		CCAB454D2C568EB900298C7A /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		CCBB26AE2C56997200235436 /* DHTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DHTextField.swift; sourceTree = "<group>"; };
 		CCBB26B02C56999B00235436 /* DHPrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DHPrimaryButton.swift; sourceTree = "<group>"; };
+		CCBB26BD2C56A8DF00235436 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,9 +169,10 @@
 		CCBB26B42C56A58A00235436 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				CCAB45082C56470000298C7A /* MainView.swift */,
 				CCBB26B92C56A5E300235436 /* Authentication */,
+				CCAB45082C56470000298C7A /* MainView.swift */,
 				CCAB454D2C568EB900298C7A /* DashboardView.swift */,
+				CCBB26BD2C56A8DF00235436 /* SplashScreenView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -324,6 +327,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CCBB26B12C56999C00235436 /* DHPrimaryButton.swift in Sources */,
+				CCBB26BE2C56A8DF00235436 /* SplashScreenView.swift in Sources */,
 				CCAB45362C56543100298C7A /* DHUser.swift in Sources */,
 				CCAB45342C5653DA00298C7A /* AuthenticationViewModel.swift in Sources */,
 				CCAB45152C564C1400298C7A /* ColorExtension.swift in Sources */,
