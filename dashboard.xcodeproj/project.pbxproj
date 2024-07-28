@@ -106,23 +106,13 @@
 		CCAB45052C56470000298C7A /* dashboard */ = {
 			isa = PBXGroup;
 			children = (
+				CCBB26B62C56A59E00235436 /* Utilities */,
+				CCBB26B42C56A58A00235436 /* View */,
+				CCBB26B32C56A58000235436 /* ObservableObject */,
+				CCBB26B22C56A57700235436 /* Model */,
+				CCBB26BA2C56A5FE00235436 /* Support */,
 				CCAB452C2C56529B00298C7A /* Info.plist */,
-				CCAB45392C56894600298C7A /* Fonts */,
-				CCAB45062C56470000298C7A /* dashboardApp.swift */,
-				CCAB45082C56470000298C7A /* MainView.swift */,
-				CCAB452A2C56528800298C7A /* GoogleService-Info.plist */,
-				CCAB450A2C56470100298C7A /* Assets.xcassets */,
 				CCAB450C2C56470100298C7A /* Preview Content */,
-				CCAB45142C564C1400298C7A /* ColorExtension.swift */,
-				CCAB452D2C5652DE00298C7A /* LoginView.swift */,
-				CCAB452F2C5652EA00298C7A /* SignupView.swift */,
-				CCAB45332C5653DA00298C7A /* AuthenticationViewModel.swift */,
-				CCAB45352C56543100298C7A /* DHUser.swift */,
-				CCAB45372C56568400298C7A /* EncodableExtension.swift */,
-				CCAB454B2C568CEA00298C7A /* FontExtension.swift */,
-				CCAB454D2C568EB900298C7A /* DashboardView.swift */,
-				CCBB26AE2C56997200235436 /* DHTextField.swift */,
-				CCBB26B02C56999B00235436 /* DHPrimaryButton.swift */,
 			);
 			path = dashboard;
 			sourceTree = "<group>";
@@ -156,6 +146,88 @@
 				CCAB45412C568AEC00298C7A /* SFUIDisplay-Ultralight.otf */,
 			);
 			path = "SF UI Display";
+			sourceTree = "<group>";
+		};
+		CCBB26B22C56A57700235436 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CCAB45352C56543100298C7A /* DHUser.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CCBB26B32C56A58000235436 /* ObservableObject */ = {
+			isa = PBXGroup;
+			children = (
+				CCBB26B52C56A59200235436 /* ViewModel */,
+			);
+			path = ObservableObject;
+			sourceTree = "<group>";
+		};
+		CCBB26B42C56A58A00235436 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CCAB45082C56470000298C7A /* MainView.swift */,
+				CCBB26B92C56A5E300235436 /* Authentication */,
+				CCAB454D2C568EB900298C7A /* DashboardView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CCBB26B52C56A59200235436 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CCAB45332C5653DA00298C7A /* AuthenticationViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CCBB26B62C56A59E00235436 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				CCBB26B82C56A5AD00235436 /* Extensions */,
+				CCBB26B72C56A5A500235436 /* Components */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		CCBB26B72C56A5A500235436 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				CCBB26B02C56999B00235436 /* DHPrimaryButton.swift */,
+				CCBB26AE2C56997200235436 /* DHTextField.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		CCBB26B82C56A5AD00235436 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CCAB45372C56568400298C7A /* EncodableExtension.swift */,
+				CCAB45142C564C1400298C7A /* ColorExtension.swift */,
+				CCAB454B2C568CEA00298C7A /* FontExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CCBB26B92C56A5E300235436 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				CCAB452F2C5652EA00298C7A /* SignupView.swift */,
+				CCAB452D2C5652DE00298C7A /* LoginView.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		CCBB26BA2C56A5FE00235436 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				CCAB452A2C56528800298C7A /* GoogleService-Info.plist */,
+				CCAB450A2C56470100298C7A /* Assets.xcassets */,
+				CCAB45062C56470000298C7A /* dashboardApp.swift */,
+				CCAB45392C56894600298C7A /* Fonts */,
+			);
+			path = Support;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
