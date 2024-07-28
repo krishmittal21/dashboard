@@ -26,6 +26,15 @@
 		CCAB45342C5653DA00298C7A /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAB45332C5653DA00298C7A /* AuthenticationViewModel.swift */; };
 		CCAB45362C56543100298C7A /* DHUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAB45352C56543100298C7A /* DHUser.swift */; };
 		CCAB45382C56568400298C7A /* EncodableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAB45372C56568400298C7A /* EncodableExtension.swift */; };
+		CCAB45432C568AEC00298C7A /* SFUIDisplay-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = CCAB453A2C568AEC00298C7A /* SFUIDisplay-Black.otf */; };
+		CCAB45442C568AEC00298C7A /* SFUIDisplay-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = CCAB453B2C568AEC00298C7A /* SFUIDisplay-Bold.otf */; };
+		CCAB45452C568AEC00298C7A /* SFUIDisplay-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = CCAB453C2C568AEC00298C7A /* SFUIDisplay-Heavy.otf */; };
+		CCAB45462C568AEC00298C7A /* SFUIDisplay-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = CCAB453D2C568AEC00298C7A /* SFUIDisplay-Light.otf */; };
+		CCAB45472C568AEC00298C7A /* SFUIDisplay-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = CCAB453E2C568AEC00298C7A /* SFUIDisplay-Medium.otf */; };
+		CCAB45482C568AEC00298C7A /* SFUIDisplay-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = CCAB453F2C568AEC00298C7A /* SFUIDisplay-Regular.otf */; };
+		CCAB45492C568AEC00298C7A /* SFUIDisplay-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = CCAB45402C568AEC00298C7A /* SFUIDisplay-Semibold.otf */; };
+		CCAB454A2C568AEC00298C7A /* SFUIDisplay-Ultralight.otf in Resources */ = {isa = PBXBuildFile; fileRef = CCAB45412C568AEC00298C7A /* SFUIDisplay-Ultralight.otf */; };
+		CCAB454C2C568CEA00298C7A /* FontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAB454B2C568CEA00298C7A /* FontExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +51,15 @@
 		CCAB45332C5653DA00298C7A /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 		CCAB45352C56543100298C7A /* DHUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DHUser.swift; sourceTree = "<group>"; };
 		CCAB45372C56568400298C7A /* EncodableExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncodableExtension.swift; sourceTree = "<group>"; };
+		CCAB453A2C568AEC00298C7A /* SFUIDisplay-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIDisplay-Black.otf"; sourceTree = "<group>"; };
+		CCAB453B2C568AEC00298C7A /* SFUIDisplay-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIDisplay-Bold.otf"; sourceTree = "<group>"; };
+		CCAB453C2C568AEC00298C7A /* SFUIDisplay-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIDisplay-Heavy.otf"; sourceTree = "<group>"; };
+		CCAB453D2C568AEC00298C7A /* SFUIDisplay-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIDisplay-Light.otf"; sourceTree = "<group>"; };
+		CCAB453E2C568AEC00298C7A /* SFUIDisplay-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIDisplay-Medium.otf"; sourceTree = "<group>"; };
+		CCAB453F2C568AEC00298C7A /* SFUIDisplay-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIDisplay-Regular.otf"; sourceTree = "<group>"; };
+		CCAB45402C568AEC00298C7A /* SFUIDisplay-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIDisplay-Semibold.otf"; sourceTree = "<group>"; };
+		CCAB45412C568AEC00298C7A /* SFUIDisplay-Ultralight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIDisplay-Ultralight.otf"; sourceTree = "<group>"; };
+		CCAB454B2C568CEA00298C7A /* FontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				CCAB452C2C56529B00298C7A /* Info.plist */,
+				CCAB45392C56894600298C7A /* Fonts */,
 				CCAB45062C56470000298C7A /* dashboardApp.swift */,
 				CCAB45082C56470000298C7A /* ContentView.swift */,
 				CCAB452A2C56528800298C7A /* GoogleService-Info.plist */,
@@ -94,6 +113,7 @@
 				CCAB45332C5653DA00298C7A /* AuthenticationViewModel.swift */,
 				CCAB45352C56543100298C7A /* DHUser.swift */,
 				CCAB45372C56568400298C7A /* EncodableExtension.swift */,
+				CCAB454B2C568CEA00298C7A /* FontExtension.swift */,
 			);
 			path = dashboard;
 			sourceTree = "<group>";
@@ -104,6 +124,29 @@
 				CCAB450D2C56470100298C7A /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CCAB45392C56894600298C7A /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				CCAB45422C568AEC00298C7A /* SF UI Display */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		CCAB45422C568AEC00298C7A /* SF UI Display */ = {
+			isa = PBXGroup;
+			children = (
+				CCAB453A2C568AEC00298C7A /* SFUIDisplay-Black.otf */,
+				CCAB453B2C568AEC00298C7A /* SFUIDisplay-Bold.otf */,
+				CCAB453C2C568AEC00298C7A /* SFUIDisplay-Heavy.otf */,
+				CCAB453D2C568AEC00298C7A /* SFUIDisplay-Light.otf */,
+				CCAB453E2C568AEC00298C7A /* SFUIDisplay-Medium.otf */,
+				CCAB453F2C568AEC00298C7A /* SFUIDisplay-Regular.otf */,
+				CCAB45402C568AEC00298C7A /* SFUIDisplay-Semibold.otf */,
+				CCAB45412C568AEC00298C7A /* SFUIDisplay-Ultralight.otf */,
+			);
+			path = "SF UI Display";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,9 +221,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCAB45472C568AEC00298C7A /* SFUIDisplay-Medium.otf in Resources */,
+				CCAB45482C568AEC00298C7A /* SFUIDisplay-Regular.otf in Resources */,
+				CCAB45442C568AEC00298C7A /* SFUIDisplay-Bold.otf in Resources */,
+				CCAB454A2C568AEC00298C7A /* SFUIDisplay-Ultralight.otf in Resources */,
+				CCAB45452C568AEC00298C7A /* SFUIDisplay-Heavy.otf in Resources */,
 				CCAB450E2C56470100298C7A /* Preview Assets.xcassets in Resources */,
 				CCAB450B2C56470100298C7A /* Assets.xcassets in Resources */,
 				CCAB452B2C56528800298C7A /* GoogleService-Info.plist in Resources */,
+				CCAB45432C568AEC00298C7A /* SFUIDisplay-Black.otf in Resources */,
+				CCAB45492C568AEC00298C7A /* SFUIDisplay-Semibold.otf in Resources */,
+				CCAB45462C568AEC00298C7A /* SFUIDisplay-Light.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,6 +248,7 @@
 				CCAB45092C56470000298C7A /* ContentView.swift in Sources */,
 				CCAB452E2C5652DE00298C7A /* LoginView.swift in Sources */,
 				CCAB45382C56568400298C7A /* EncodableExtension.swift in Sources */,
+				CCAB454C2C568CEA00298C7A /* FontExtension.swift in Sources */,
 				CCAB45072C56470000298C7A /* dashboardApp.swift in Sources */,
 				CCAB45302C5652EA00298C7A /* SignupView.swift in Sources */,
 			);
