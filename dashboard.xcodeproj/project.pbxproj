@@ -25,6 +25,7 @@
 		CCAB45302C5652EA00298C7A /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAB452F2C5652EA00298C7A /* SignupView.swift */; };
 		CCAB45342C5653DA00298C7A /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAB45332C5653DA00298C7A /* AuthenticationViewModel.swift */; };
 		CCAB45362C56543100298C7A /* DHUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAB45352C56543100298C7A /* DHUser.swift */; };
+		CCAB45382C56568400298C7A /* EncodableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAB45372C56568400298C7A /* EncodableExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		CCAB452F2C5652EA00298C7A /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
 		CCAB45332C5653DA00298C7A /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 		CCAB45352C56543100298C7A /* DHUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DHUser.swift; sourceTree = "<group>"; };
+		CCAB45372C56568400298C7A /* EncodableExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncodableExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 				CCAB452F2C5652EA00298C7A /* SignupView.swift */,
 				CCAB45332C5653DA00298C7A /* AuthenticationViewModel.swift */,
 				CCAB45352C56543100298C7A /* DHUser.swift */,
+				CCAB45372C56568400298C7A /* EncodableExtension.swift */,
 			);
 			path = dashboard;
 			sourceTree = "<group>";
@@ -193,6 +196,7 @@
 				CCAB45152C564C1400298C7A /* ColorExtension.swift in Sources */,
 				CCAB45092C56470000298C7A /* ContentView.swift in Sources */,
 				CCAB452E2C5652DE00298C7A /* LoginView.swift in Sources */,
+				CCAB45382C56568400298C7A /* EncodableExtension.swift in Sources */,
 				CCAB45072C56470000298C7A /* dashboardApp.swift in Sources */,
 				CCAB45302C5652EA00298C7A /* SignupView.swift in Sources */,
 			);
