@@ -34,6 +34,7 @@
 		CCAB45482C568AEC00298C7A /* SFUIDisplay-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = CCAB453F2C568AEC00298C7A /* SFUIDisplay-Regular.otf */; };
 		CCAB45492C568AEC00298C7A /* SFUIDisplay-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = CCAB45402C568AEC00298C7A /* SFUIDisplay-Semibold.otf */; };
 		CCAB454A2C568AEC00298C7A /* SFUIDisplay-Ultralight.otf in Resources */ = {isa = PBXBuildFile; fileRef = CCAB45412C568AEC00298C7A /* SFUIDisplay-Ultralight.otf */; };
+		CCAB454C2C568CEA00298C7A /* FontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAB454B2C568CEA00298C7A /* FontExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		CCAB453F2C568AEC00298C7A /* SFUIDisplay-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIDisplay-Regular.otf"; sourceTree = "<group>"; };
 		CCAB45402C568AEC00298C7A /* SFUIDisplay-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIDisplay-Semibold.otf"; sourceTree = "<group>"; };
 		CCAB45412C568AEC00298C7A /* SFUIDisplay-Ultralight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIDisplay-Ultralight.otf"; sourceTree = "<group>"; };
+		CCAB454B2C568CEA00298C7A /* FontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 				CCAB45332C5653DA00298C7A /* AuthenticationViewModel.swift */,
 				CCAB45352C56543100298C7A /* DHUser.swift */,
 				CCAB45372C56568400298C7A /* EncodableExtension.swift */,
+				CCAB454B2C568CEA00298C7A /* FontExtension.swift */,
 			);
 			path = dashboard;
 			sourceTree = "<group>";
@@ -245,6 +248,7 @@
 				CCAB45092C56470000298C7A /* ContentView.swift in Sources */,
 				CCAB452E2C5652DE00298C7A /* LoginView.swift in Sources */,
 				CCAB45382C56568400298C7A /* EncodableExtension.swift in Sources */,
+				CCAB454C2C568CEA00298C7A /* FontExtension.swift in Sources */,
 				CCAB45072C56470000298C7A /* dashboardApp.swift in Sources */,
 				CCAB45302C5652EA00298C7A /* SignupView.swift in Sources */,
 			);
