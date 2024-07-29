@@ -20,7 +20,7 @@ struct MainView: View {
                             firstTimeUser = false
                         }
                 } else {
-                    DashboardView()
+                    MenuView()
                 }
             } else {
                 LoginView()

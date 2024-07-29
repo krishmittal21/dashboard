@@ -14,7 +14,7 @@ struct SplashScreenView: View {
     var body: some View {
         ZStack {
             if self.isActive {
-                DashboardView()
+                MenuView()
             } else {
                 ZStack(alignment: .top) {
                     Color(hex: "#ECECEC").ignoresSafeArea()
@@ -35,23 +35,6 @@ struct SplashScreenView: View {
                     .padding()
                     .padding(.bottom, 200)
                 }
-//                .overlay(
-//                    VStack {
-//                        Spacer()
-//                        HStack {
-//                            Spacer()
-//                            Image(systemName: "square.3.layers.3d.top.filled")
-//                                .resizable()
-//                                .frame(width: 40, height: 40)
-//                                .foregroundColor(.purple)
-//                                .padding()
-//                                .background(Color.white)
-//                                .clipShape(Circle())
-//                                .shadow(radius: 5)
-//                        }
-//                    }
-//                    .padding()
-//                )
             }
         }
         .onAppear {

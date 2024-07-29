@@ -39,6 +39,16 @@
 		CCBB26AF2C56997200235436 /* DHTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBB26AE2C56997200235436 /* DHTextField.swift */; };
 		CCBB26B12C56999C00235436 /* DHPrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBB26B02C56999B00235436 /* DHPrimaryButton.swift */; };
 		CCBB26BE2C56A8DF00235436 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBB26BD2C56A8DF00235436 /* SplashScreenView.swift */; };
+		CCBB26C02C57313700235436 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBB26BF2C57313700235436 /* MenuView.swift */; };
+		CCBB26C22C573A2100235436 /* GalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBB26C12C573A2100235436 /* GalleryView.swift */; };
+		CCBB26C42C573A3000235436 /* AchievementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBB26C32C573A3000235436 /* AchievementView.swift */; };
+		CCBB26C62C573A4100235436 /* TaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBB26C52C573A4100235436 /* TaskView.swift */; };
+		CCBB26C82C573A5300235436 /* ToDoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBB26C72C573A5300235436 /* ToDoView.swift */; };
+		CCBB26CA2C573E9000235436 /* TabContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBB26C92C573E9000235436 /* TabContentView.swift */; };
+		CCBB26CC2C573EB500235436 /* MenuContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBB26CB2C573EB500235436 /* MenuContentView.swift */; };
+		CCBB26CE2C573ED000235436 /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBB26CD2C573ED000235436 /* MenuButton.swift */; };
+		CCBB26D02C573EE700235436 /* MenuToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBB26CF2C573EE700235436 /* MenuToggleButton.swift */; };
+		CCBB26D22C573F0200235436 /* MenuItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBB26D12C573F0200235436 /* MenuItems.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +78,16 @@
 		CCBB26AE2C56997200235436 /* DHTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DHTextField.swift; sourceTree = "<group>"; };
 		CCBB26B02C56999B00235436 /* DHPrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DHPrimaryButton.swift; sourceTree = "<group>"; };
 		CCBB26BD2C56A8DF00235436 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
+		CCBB26BF2C57313700235436 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		CCBB26C12C573A2100235436 /* GalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryView.swift; sourceTree = "<group>"; };
+		CCBB26C32C573A3000235436 /* AchievementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementView.swift; sourceTree = "<group>"; };
+		CCBB26C52C573A4100235436 /* TaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskView.swift; sourceTree = "<group>"; };
+		CCBB26C72C573A5300235436 /* ToDoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoView.swift; sourceTree = "<group>"; };
+		CCBB26C92C573E9000235436 /* TabContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabContentView.swift; sourceTree = "<group>"; };
+		CCBB26CB2C573EB500235436 /* MenuContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuContentView.swift; sourceTree = "<group>"; };
+		CCBB26CD2C573ED000235436 /* MenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
+		CCBB26CF2C573EE700235436 /* MenuToggleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuToggleButton.swift; sourceTree = "<group>"; };
+		CCBB26D12C573F0200235436 /* MenuItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItems.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				CCAB45352C56543100298C7A /* DHUser.swift */,
+				CCBB26D12C573F0200235436 /* MenuItems.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -169,10 +190,11 @@
 		CCBB26B42C56A58A00235436 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CCBB26D42C573FAC00235436 /* Empty Views */,
+				CCBB26D32C573F8900235436 /* Navigation */,
 				CCBB26B92C56A5E300235436 /* Authentication */,
-				CCAB45082C56470000298C7A /* MainView.swift */,
 				CCAB454D2C568EB900298C7A /* DashboardView.swift */,
-				CCBB26BD2C56A8DF00235436 /* SplashScreenView.swift */,
+				CCBB26C12C573A2100235436 /* GalleryView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -199,6 +221,8 @@
 			children = (
 				CCBB26B02C56999B00235436 /* DHPrimaryButton.swift */,
 				CCBB26AE2C56997200235436 /* DHTextField.swift */,
+				CCBB26CD2C573ED000235436 /* MenuButton.swift */,
+				CCBB26CF2C573EE700235436 /* MenuToggleButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -231,6 +255,28 @@
 				CCAB45392C56894600298C7A /* Fonts */,
 			);
 			path = Support;
+			sourceTree = "<group>";
+		};
+		CCBB26D32C573F8900235436 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				CCBB26CB2C573EB500235436 /* MenuContentView.swift */,
+				CCBB26C92C573E9000235436 /* TabContentView.swift */,
+				CCBB26BF2C57313700235436 /* MenuView.swift */,
+				CCBB26BD2C56A8DF00235436 /* SplashScreenView.swift */,
+				CCAB45082C56470000298C7A /* MainView.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		CCBB26D42C573FAC00235436 /* Empty Views */ = {
+			isa = PBXGroup;
+			children = (
+				CCBB26C72C573A5300235436 /* ToDoView.swift */,
+				CCBB26C52C573A4100235436 /* TaskView.swift */,
+				CCBB26C32C573A3000235436 /* AchievementView.swift */,
+			);
+			path = "Empty Views";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -328,16 +374,26 @@
 			files = (
 				CCBB26B12C56999C00235436 /* DHPrimaryButton.swift in Sources */,
 				CCBB26BE2C56A8DF00235436 /* SplashScreenView.swift in Sources */,
+				CCBB26CE2C573ED000235436 /* MenuButton.swift in Sources */,
 				CCAB45362C56543100298C7A /* DHUser.swift in Sources */,
+				CCBB26CC2C573EB500235436 /* MenuContentView.swift in Sources */,
 				CCAB45342C5653DA00298C7A /* AuthenticationViewModel.swift in Sources */,
+				CCBB26CA2C573E9000235436 /* TabContentView.swift in Sources */,
+				CCBB26D22C573F0200235436 /* MenuItems.swift in Sources */,
+				CCBB26C42C573A3000235436 /* AchievementView.swift in Sources */,
+				CCBB26C22C573A2100235436 /* GalleryView.swift in Sources */,
 				CCAB45152C564C1400298C7A /* ColorExtension.swift in Sources */,
 				CCAB45092C56470000298C7A /* MainView.swift in Sources */,
 				CCAB452E2C5652DE00298C7A /* LoginView.swift in Sources */,
+				CCBB26C02C57313700235436 /* MenuView.swift in Sources */,
+				CCBB26C62C573A4100235436 /* TaskView.swift in Sources */,
 				CCBB26AF2C56997200235436 /* DHTextField.swift in Sources */,
 				CCAB45382C56568400298C7A /* EncodableExtension.swift in Sources */,
 				CCAB454C2C568CEA00298C7A /* FontExtension.swift in Sources */,
 				CCAB454E2C568EB900298C7A /* DashboardView.swift in Sources */,
+				CCBB26D02C573EE700235436 /* MenuToggleButton.swift in Sources */,
 				CCAB45072C56470000298C7A /* dashboardApp.swift in Sources */,
+				CCBB26C82C573A5300235436 /* ToDoView.swift in Sources */,
 				CCAB45302C5652EA00298C7A /* SignupView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
