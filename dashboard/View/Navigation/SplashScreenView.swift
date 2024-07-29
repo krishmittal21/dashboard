@@ -17,7 +17,7 @@ struct SplashScreenView: View {
                 MenuView()
             } else {
                 ZStack(alignment: .top) {
-                    Color(hex: "#ECECEC").ignoresSafeArea()
+                    Color.backgroundColor.ignoresSafeArea()
                     
                     VStack(alignment: .center, spacing: 20) {
                         Text("Welcome \(authenticationViewModel.user?.firstName ?? "[userFirstName]")")
