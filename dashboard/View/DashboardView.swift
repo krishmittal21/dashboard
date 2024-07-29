@@ -11,6 +11,7 @@ struct DashboardView: View {
     @StateObject private var authenticationViewModel = AuthenticationViewModel()
     @StateObject private var tenantViewModel = TenantViewModel()
     @State private var showProfile: Bool = false
+    @State private var avatarImage: UIImage?
     
     var body: some View {
         NavigationStack {
@@ -24,10 +25,33 @@ struct DashboardView: View {
                         
                         Spacer()
                         
-                        Image(systemName: "person")
-                            .onTapGesture {
-                                showProfile.toggle()
+                        Group {
+                            if let avatarImage = avatarImage {
+                                Image(uiImage: avatarImage)
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                            } else if let avatarURL = authenticationViewModel.user?.avatarURL, let url = URL(string: avatarURL) {
+                                AsyncImage(url: url) { image in
+                                    image
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fill)
+                                } placeholder: {
+                                    Image(systemName: "person")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fill)
+                                }
+                            } else {
+                                Image(systemName: "person")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
                             }
+                        }
+                        .frame(width: 80, height: 80)
+                        .clipShape(RoundedRectangle(cornerRadius: 3.0))
+                        .shadow(radius: 20)
+                        .onTapGesture {
+                            showProfile.toggle()
+                        }
                     }
                     .padding()
                     
@@ -60,7 +84,7 @@ struct DashboardView: View {
                 }
                 .navigationDestination(isPresented: $showProfile) {
                     ProfileView().toolbarRole(.editor)
-            }
+                }
             }
         }
     }
