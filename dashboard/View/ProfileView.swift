@@ -97,6 +97,7 @@ struct ProfileView: View {
                         }
                     }
                 }
+                .opacity(showingDeleteConfirmation ? 0 : 1)
                 
                 if showingDeleteConfirmation {
                     CustomDeleteAccountAlert(isPresented: $showingDeleteConfirmation) {
