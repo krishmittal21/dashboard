@@ -57,6 +57,43 @@ class AuthenticationViewModel: ObservableObject {
 }
 
 extension AuthenticationViewModel {
+    func updateUser(firstName: String, lastName: String, phone: String) async -> Bool {
+        guard let userId = Auth.auth().currentUser?.uid else {
+            errorMessage = "No authenticated user found"
+            return false
+        }
+        
+        let db = Firestore.firestore()
+        let userRef = db.collection(DHUserModelName.userFirestore).document(userId)
+        
+        do {
+            try await userRef.updateData([
+                DHUserModelName.firstName: firstName,
+                DHUserModelName.lastName: lastName,
+                DHUserModelName.phone: phone,
+                DHUserModelName.lastUpdated: Date().timeIntervalSince1970,
+                DHUserModelName.editedBy: userId
+            ])
+            
+            if var updatedUser = self.user {
+                updatedUser.firstName = firstName
+                updatedUser.lastName = lastName
+                updatedUser.phone = phone
+                updatedUser.lastUpdated = Date().timeIntervalSince1970
+                updatedUser.editedBy = userId
+                self.user = updatedUser
+            }
+            
+            return true
+        } catch {
+            print("Error updating user: \(error.localizedDescription)")
+            errorMessage = error.localizedDescription
+            return false
+        }
+    }
+}
+
+extension AuthenticationViewModel {
     
     func signInWithEmailPassword() async -> Bool {
         do {
