@@ -56,6 +56,8 @@
 		CCBB26E02C57598700235436 /* FirebaseStorageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBB26DF2C57598700235436 /* FirebaseStorageHelper.swift */; };
 		CCBB26E42C57704400235436 /* GalleryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBB26E32C57704400235436 /* GalleryViewModel.swift */; };
 		CCBB26E62C57716E00235436 /* DHImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBB26E52C57716E00235436 /* DHImages.swift */; };
+		CCBB26E82C5791A500235436 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBB26E72C5791A500235436 /* ImagePicker.swift */; };
+		CCBB26EA2C5791C800235436 /* InfoRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBB26E92C5791C800235436 /* InfoRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -102,6 +104,8 @@
 		CCBB26DF2C57598700235436 /* FirebaseStorageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStorageHelper.swift; sourceTree = "<group>"; };
 		CCBB26E32C57704400235436 /* GalleryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewModel.swift; sourceTree = "<group>"; };
 		CCBB26E52C57716E00235436 /* DHImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DHImages.swift; sourceTree = "<group>"; };
+		CCBB26E72C5791A500235436 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		CCBB26E92C5791C800235436 /* InfoRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -244,6 +248,8 @@
 				CCBB26AE2C56997200235436 /* DHTextField.swift */,
 				CCBB26CD2C573ED000235436 /* MenuButton.swift */,
 				CCBB26CF2C573EE700235436 /* MenuToggleButton.swift */,
+				CCBB26E72C5791A500235436 /* ImagePicker.swift */,
+				CCBB26E92C5791C800235436 /* InfoRow.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -413,6 +419,7 @@
 				CCBB26DA2C57525600235436 /* CustomDeleteAccountAlert.swift in Sources */,
 				CCBB26CA2C573E9000235436 /* TabContentView.swift in Sources */,
 				CCBB26D22C573F0200235436 /* MenuItems.swift in Sources */,
+				CCBB26EA2C5791C800235436 /* InfoRow.swift in Sources */,
 				CCBB26DC2C57550F00235436 /* EditProfileView.swift in Sources */,
 				CCBB26C42C573A3000235436 /* AchievementView.swift in Sources */,
 				CCBB26C22C573A2100235436 /* GalleryView.swift in Sources */,
@@ -424,6 +431,7 @@
 				CCBB26C62C573A4100235436 /* TaskView.swift in Sources */,
 				CCBB26AF2C56997200235436 /* DHTextField.swift in Sources */,
 				CCBB26D62C5743DB00235436 /* ProfileView.swift in Sources */,
+				CCBB26E82C5791A500235436 /* ImagePicker.swift in Sources */,
 				CCAB45382C56568400298C7A /* EncodableExtension.swift in Sources */,
 				CCAB454C2C568CEA00298C7A /* FontExtension.swift in Sources */,
 				CCAB454E2C568EB900298C7A /* DashboardView.swift in Sources */,
