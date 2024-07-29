@@ -50,6 +50,7 @@
 		CCBB26D02C573EE700235436 /* MenuToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBB26CF2C573EE700235436 /* MenuToggleButton.swift */; };
 		CCBB26D22C573F0200235436 /* MenuItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBB26D12C573F0200235436 /* MenuItems.swift */; };
 		CCBB26D62C5743DB00235436 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBB26D52C5743DB00235436 /* ProfileView.swift */; };
+		CCBB26D82C57453400235436 /* TenantViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBB26D72C57453400235436 /* TenantViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +91,7 @@
 		CCBB26CF2C573EE700235436 /* MenuToggleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuToggleButton.swift; sourceTree = "<group>"; };
 		CCBB26D12C573F0200235436 /* MenuItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItems.swift; sourceTree = "<group>"; };
 		CCBB26D52C5743DB00235436 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		CCBB26D72C57453400235436 /* TenantViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TenantViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				CCAB45332C5653DA00298C7A /* AuthenticationViewModel.swift */,
+				CCBB26D72C57453400235436 /* TenantViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -389,6 +392,7 @@
 				CCAB45092C56470000298C7A /* MainView.swift in Sources */,
 				CCAB452E2C5652DE00298C7A /* LoginView.swift in Sources */,
 				CCBB26C02C57313700235436 /* MenuView.swift in Sources */,
+				CCBB26D82C57453400235436 /* TenantViewModel.swift in Sources */,
 				CCBB26C62C573A4100235436 /* TaskView.swift in Sources */,
 				CCBB26AF2C56997200235436 /* DHTextField.swift in Sources */,
 				CCBB26D62C5743DB00235436 /* ProfileView.swift in Sources */,

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct DashboardView: View {
     @StateObject private var authenticationViewModel = AuthenticationViewModel()
+    @StateObject private var viewModel = TenantViewModel()
     @State private var showProfile: Bool = false
     
     var body: some View {
@@ -29,11 +30,11 @@ struct DashboardView: View {
                 
                 Spacer()
                 
-                VStack {
+                VStack(alignment: .leading, spacing: 10) {
                     HStack {
                         Text("Tenant")
                             .customFont(.medium, 10)
-                        Text(authenticationViewModel.user?.tenantId ?? "Default")
+                        Text(viewModel.tenantName)
                             .customFont(.light, 10)
                     }
                     
@@ -49,6 +50,11 @@ struct DashboardView: View {
             .onAppear(perform: {
                 authenticationViewModel.fetchUser()
             })
+            .onChange(of: authenticationViewModel.user?.tenantId) {
+                if let tenantId = authenticationViewModel.user?.tenantId {
+                    viewModel.fetchTenantName(for: tenantId)
+                }
+            }
             .navigationDestination(isPresented: $showProfile) {
                 ProfileView().toolbarRole(.editor)
             }
