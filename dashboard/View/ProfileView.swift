@@ -98,7 +98,7 @@ struct ProfileView: View {
                             }
                             .font(.headline)
                             .padding()
-                            .background(Color.white)
+                            .background(Color(.systemBackground))
                             
                             Group {
                                 InfoRow(title: "Account", value: authenticationViewModel.user?.id ?? "0018 1994 1293 1841")
@@ -121,7 +121,21 @@ struct ProfileView: View {
                             }
                         }
                         .padding()
-                        .background(Color.white)
+                        .background(Color(.systemBackground))
+                        
+                        Button(action: {
+                            authenticationViewModel.signOut()
+                        }) {
+                            HStack {
+                                Text("Sign out Account")
+                                    .customFont(.light, 18)
+                                Spacer()
+                                Image(systemName: "chevron.right")
+                                    .bold()
+                            }
+                        }
+                        .padding()
+                        .background(Color(.systemBackground))
                     }
                 }
                 .navigationBarTitleDisplayMode(.inline)

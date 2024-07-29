@@ -38,6 +38,7 @@ struct SplashScreenView: View {
             }
         }
         .onAppear {
+            authenticationViewModel.fetchUser()
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
                 withAnimation {
                     self.isActive = true
