@@ -56,7 +56,7 @@ struct ProfileView: View {
                                         .aspectRatio(contentMode: .fill)
                                 }
                             }
-                            .frame(width: 150, height: 150)
+                            .frame(width: 100, height: 100)
                             .clipShape(RoundedRectangle(cornerRadius: 3.0))
                             .shadow(radius: 20)
                             .onTapGesture {
@@ -107,7 +107,7 @@ struct ProfileView: View {
                                 InfoRow(title: "Tenant Name", value: tenantViewModel.tenantName)
                             }
                         }
-                        .padding(.bottom, 50)
+                        .padding(.bottom, 30)
                         
                         Button(action: {
                             showingDeleteConfirmation = true
@@ -124,7 +124,6 @@ struct ProfileView: View {
                         .background(Color.white)
                     }
                 }
-                .navigationTitle("Profile")
                 .navigationBarTitleDisplayMode(.inline)
                 .navigationBarBackButtonHidden(true)
                 .toolbar {
@@ -133,6 +132,11 @@ struct ProfileView: View {
                             Image(systemName: "chevron.left")
                                 .foregroundColor(.black)
                         }
+                    }
+                    
+                    ToolbarItem(placement: .principal)  {
+                        Text("Profile")
+                            .customFont(.light, 21)
                     }
                 }
                 .opacity(isEditing ? 0.3 : 1)
@@ -203,7 +207,6 @@ struct ProfileView: View {
         }
     }
 }
-
 
 private func formatDate(_ timeInterval: TimeInterval?) -> String {
     guard let timeInterval = timeInterval else { return "N/A" }
