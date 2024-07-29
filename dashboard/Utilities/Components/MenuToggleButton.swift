@@ -24,7 +24,6 @@ struct MenuToggleButton: View {
                 .background(Color.primaryColor)
                 .cornerRadius(10)
                 .shadow(color: .black.opacity(0.5), radius: 5, x: 0, y: -5)
-                .offset(y: -5)
         }
     }
 }
