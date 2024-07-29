@@ -9,6 +9,8 @@ import SwiftUI
 
 struct GalleryView: View {
     @StateObject private var viewModel = GalleryViewModel()
+    @State private var isExpanded = false
+    @Namespace private var animation
     
     let columns = [
         GridItem(.flexible(), spacing: 10),
@@ -17,14 +19,36 @@ struct GalleryView: View {
     
     var body: some View {
         GeometryReader { geometry in
-            HStack(spacing: 0) {
-                Spacer()
-                galleryContent(in: geometry)
+            ZStack {
+                if !isExpanded {
+                    HStack(spacing: 0) {
+                        Spacer()
+                        galleryContent(in: geometry)
+                            .matchedGeometryEffect(id: "gallery", in: animation)
+                    }
+                } else {
+                    galleryContent(in: geometry)
+                        .matchedGeometryEffect(id: "gallery", in: animation)
+                }
             }
-            galleryContent(in: geometry)
+            .animation(.spring, value: isExpanded)
         }
         .onAppear {
             viewModel.fetchData()
+            animateGallery()
+        }
+        .onDisappear {
+            isExpanded = false
+        }
+    }
+    
+    private func animateGallery() {
+        isExpanded = false
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            withAnimation {
+                isExpanded = true
+            }
         }
     }
     
