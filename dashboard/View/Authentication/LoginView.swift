@@ -20,6 +20,7 @@ struct LoginView: View {
                 Text("Some small message which appears\nwhen people were away")
                     .customFont(.regular, 16)
                     .multilineTextAlignment(.center)
+                    .fixedSize(horizontal: false, vertical: true)
                     .foregroundColor(.gray)
                 
                 VStack(spacing: 15) {
