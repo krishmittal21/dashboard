@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-class DHImages: ObservableObject, Identifiable {
-    var id:String = UUID().uuidString
-    var name: String
+class DHImages: ObservableObject, Identifiable, Equatable {
+    let id: String = UUID().uuidString
+    let name: String
     @Published var image: UIImage
-    var dateCreated: TimeInterval
-    var sessionId: String
+    let dateCreated: Date
+    let sessionId: String
     
-    init(name: String, dateCreated: TimeInterval, sessionId: String) {
+    init(name: String, dateCreated: Date, sessionId: String) {
         self.name = name
         self.image = UIImage(systemName: "photo")!
         self.dateCreated = dateCreated
@@ -28,5 +28,9 @@ class DHImages: ObservableObject, Identifiable {
                 print(error.localizedDescription)
             }
         }
+    }
+    
+    static func == (lhs: DHImages, rhs: DHImages) -> Bool {
+        return lhs.id == rhs.id
     }
 }
