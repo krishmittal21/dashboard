@@ -107,7 +107,7 @@ struct ProfileView: View {
                                 InfoRow(title: "Tenant Name", value: tenantViewModel.tenantName)
                             }
                         }
-                        .padding(.bottom, 30)
+                        .padding(.bottom, 50)
                         
                         Button(action: {
                             showingDeleteConfirmation = true
