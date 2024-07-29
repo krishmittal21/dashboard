@@ -53,6 +53,7 @@
 		CCBB26D82C57453400235436 /* TenantViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBB26D72C57453400235436 /* TenantViewModel.swift */; };
 		CCBB26DA2C57525600235436 /* CustomDeleteAccountAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBB26D92C57525600235436 /* CustomDeleteAccountAlert.swift */; };
 		CCBB26DC2C57550F00235436 /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBB26DB2C57550F00235436 /* EditProfileView.swift */; };
+		CCBB26E02C57598700235436 /* FirebaseStorageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBB26DF2C57598700235436 /* FirebaseStorageHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,6 +97,7 @@
 		CCBB26D72C57453400235436 /* TenantViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TenantViewModel.swift; sourceTree = "<group>"; };
 		CCBB26D92C57525600235436 /* CustomDeleteAccountAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDeleteAccountAlert.swift; sourceTree = "<group>"; };
 		CCBB26DB2C57550F00235436 /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
+		CCBB26DF2C57598700235436 /* FirebaseStorageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStorageHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,6 +223,7 @@
 		CCBB26B62C56A59E00235436 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				CCBB26DE2C57597100235436 /* Helper */,
 				CCBB26B82C56A5AD00235436 /* Extensions */,
 				CCBB26B72C56A5A500235436 /* Components */,
 			);
@@ -289,6 +292,14 @@
 				CCBB26C32C573A3000235436 /* AchievementView.swift */,
 			);
 			path = "Empty Views";
+			sourceTree = "<group>";
+		};
+		CCBB26DE2C57597100235436 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				CCBB26DF2C57598700235436 /* FirebaseStorageHelper.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -384,6 +395,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCBB26E02C57598700235436 /* FirebaseStorageHelper.swift in Sources */,
 				CCBB26B12C56999C00235436 /* DHPrimaryButton.swift in Sources */,
 				CCBB26BE2C56A8DF00235436 /* SplashScreenView.swift in Sources */,
 				CCBB26CE2C573ED000235436 /* MenuButton.swift in Sources */,
