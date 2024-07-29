@@ -147,8 +147,8 @@
 			isa = PBXGroup;
 			children = (
 				CCBB26B62C56A59E00235436 /* Utilities */,
+				CCBB26B52C56A59200235436 /* ViewModel */,
 				CCBB26B42C56A58A00235436 /* View */,
-				CCBB26B32C56A58000235436 /* ObservableObject */,
 				CCBB26B22C56A57700235436 /* Model */,
 				CCBB26BA2C56A5FE00235436 /* Support */,
 				CCAB452C2C56529B00298C7A /* Info.plist */,
@@ -196,14 +196,6 @@
 				CCBB26E52C57716E00235436 /* DHImages.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		CCBB26B32C56A58000235436 /* ObservableObject */ = {
-			isa = PBXGroup;
-			children = (
-				CCBB26B52C56A59200235436 /* ViewModel */,
-			);
-			path = ObservableObject;
 			sourceTree = "<group>";
 		};
 		CCBB26B42C56A58A00235436 /* View */ = {
