@@ -53,6 +53,9 @@
 		CCBB26D82C57453400235436 /* TenantViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBB26D72C57453400235436 /* TenantViewModel.swift */; };
 		CCBB26DA2C57525600235436 /* CustomDeleteAccountAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBB26D92C57525600235436 /* CustomDeleteAccountAlert.swift */; };
 		CCBB26DC2C57550F00235436 /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBB26DB2C57550F00235436 /* EditProfileView.swift */; };
+		CCBB26E02C57598700235436 /* FirebaseStorageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBB26DF2C57598700235436 /* FirebaseStorageHelper.swift */; };
+		CCBB26E42C57704400235436 /* GalleryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBB26E32C57704400235436 /* GalleryViewModel.swift */; };
+		CCBB26E62C57716E00235436 /* DHImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBB26E52C57716E00235436 /* DHImages.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,6 +99,9 @@
 		CCBB26D72C57453400235436 /* TenantViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TenantViewModel.swift; sourceTree = "<group>"; };
 		CCBB26D92C57525600235436 /* CustomDeleteAccountAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDeleteAccountAlert.swift; sourceTree = "<group>"; };
 		CCBB26DB2C57550F00235436 /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
+		CCBB26DF2C57598700235436 /* FirebaseStorageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStorageHelper.swift; sourceTree = "<group>"; };
+		CCBB26E32C57704400235436 /* GalleryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewModel.swift; sourceTree = "<group>"; };
+		CCBB26E52C57716E00235436 /* DHImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DHImages.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +189,7 @@
 			children = (
 				CCAB45352C56543100298C7A /* DHUser.swift */,
 				CCBB26D12C573F0200235436 /* MenuItems.swift */,
+				CCBB26E52C57716E00235436 /* DHImages.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -214,6 +221,7 @@
 			children = (
 				CCAB45332C5653DA00298C7A /* AuthenticationViewModel.swift */,
 				CCBB26D72C57453400235436 /* TenantViewModel.swift */,
+				CCBB26E32C57704400235436 /* GalleryViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -221,6 +229,7 @@
 		CCBB26B62C56A59E00235436 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				CCBB26DE2C57597100235436 /* Helper */,
 				CCBB26B82C56A5AD00235436 /* Extensions */,
 				CCBB26B72C56A5A500235436 /* Components */,
 			);
@@ -289,6 +298,14 @@
 				CCBB26C32C573A3000235436 /* AchievementView.swift */,
 			);
 			path = "Empty Views";
+			sourceTree = "<group>";
+		};
+		CCBB26DE2C57597100235436 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				CCBB26DF2C57598700235436 /* FirebaseStorageHelper.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -384,11 +401,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCBB26E42C57704400235436 /* GalleryViewModel.swift in Sources */,
+				CCBB26E02C57598700235436 /* FirebaseStorageHelper.swift in Sources */,
 				CCBB26B12C56999C00235436 /* DHPrimaryButton.swift in Sources */,
 				CCBB26BE2C56A8DF00235436 /* SplashScreenView.swift in Sources */,
 				CCBB26CE2C573ED000235436 /* MenuButton.swift in Sources */,
 				CCAB45362C56543100298C7A /* DHUser.swift in Sources */,
 				CCBB26CC2C573EB500235436 /* MenuContentView.swift in Sources */,
+				CCBB26E62C57716E00235436 /* DHImages.swift in Sources */,
 				CCAB45342C5653DA00298C7A /* AuthenticationViewModel.swift in Sources */,
 				CCBB26DA2C57525600235436 /* CustomDeleteAccountAlert.swift in Sources */,
 				CCBB26CA2C573E9000235436 /* TabContentView.swift in Sources */,
