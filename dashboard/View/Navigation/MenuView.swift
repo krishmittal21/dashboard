@@ -10,11 +10,19 @@ import SwiftUI
 struct MenuView: View {
     @State private var selectedTab = 0
     @State private var isMenuOpen = false
-    
+    @State private var showProfile = false
+
     var body: some View {
-        ZStack(alignment: .bottomTrailing) {
-            TabContentView(selectedTab: $selectedTab)
-            MenuContentView(selectedTab: $selectedTab, isMenuOpen: $isMenuOpen)
+        NavigationStack {
+            ZStack(alignment: .bottomTrailing) {
+                TabContentView(selectedTab: $selectedTab, showProfile: $showProfile)
+                if !showProfile {
+                    MenuContentView(selectedTab: $selectedTab, isMenuOpen: $isMenuOpen)
+                }
+            }
+            .navigationDestination(isPresented: $showProfile) {
+                ProfileView()
+            }
         }
     }
 }

@@ -9,10 +9,11 @@ import SwiftUI
 
 struct TabContentView: View {
     @Binding var selectedTab: Int
-    
+    @Binding var showProfile: Bool
+
     var body: some View {
         TabView(selection: $selectedTab) {
-            DashboardView()
+            DashboardView(showProfile: $showProfile)
                 .tag(0)
             TaskView()
                 .tag(1)
