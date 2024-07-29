@@ -6,6 +6,12 @@
 //
 
 import SwiftUI
+import PhotosUI
+
+enum ImagePickerType {
+    case camera
+    case photoLibrary
+}
 
 struct ProfileView: View {
     @StateObject private var authenticationViewModel = AuthenticationViewModel()
@@ -15,6 +21,10 @@ struct ProfileView: View {
     @State private var editableFirstName = ""
     @State private var editableLastName = ""
     @State private var editablePhone = ""
+    @State private var selectedItem: PhotosPickerItem? = nil
+    @State private var avatarImage: UIImage?
+    @State private var showingImagePicker = false
+    @State private var imagePickerType: ImagePickerType = .photoLibrary
     @Environment(\.dismiss) private var dismiss
     
     var body: some View {
@@ -23,14 +33,35 @@ struct ProfileView: View {
                 Color.backgroundColor.ignoresSafeArea()
                 
                 ScrollView {
-                    VStack(alignment: .leading, spacing: 20) {
+                    VStack(alignment: .leading, spacing: 10) {
                         VStack(alignment: .center) {
-                            Image(systemName: "person")
-                                .resizable()
-                                .aspectRatio(contentMode: .fill)
-                                .frame(width: 100, height: 100)
-                                .clipShape(Circle())
-                                .shadow(radius: 20)
+                            Group {
+                                if let avatarImage = avatarImage {
+                                    Image(uiImage: avatarImage)
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fill)
+                                } else if let avatarURL = authenticationViewModel.user?.avatarURL, let url = URL(string: avatarURL) {
+                                    AsyncImage(url: url) { image in
+                                        image
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fill)
+                                    } placeholder: {
+                                        Image(systemName: "person")
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fill)
+                                    }
+                                } else {
+                                    Image(systemName: "person")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fill)
+                                }
+                            }
+                            .frame(width: 150, height: 150)
+                            .clipShape(RoundedRectangle(cornerRadius: 3.0))
+                            .shadow(radius: 20)
+                            .onTapGesture {
+                                showImageOptions()
+                            }
                             
                             Text(authenticationViewModel.user?.fullName ?? "Firstname Lastname")
                                 .customFont(.light, 20)
@@ -131,7 +162,35 @@ struct ProfileView: View {
                     tenantViewModel.fetchTenantName(for: tenantId)
                 }
             }
+            .sheet(isPresented: $showingImagePicker) {
+                ImagePicker(image: $avatarImage, sourceType: imagePickerType == .camera ? .camera : .photoLibrary)
+                    .ignoresSafeArea()
+                    .onDisappear {
+                        if let image = avatarImage {
+                            authenticationViewModel.inputImage = image
+                            authenticationViewModel.uploadProfilePhoto()
+                        }
+                    }
+            }
         }
+    }
+    
+    private func showImageOptions() {
+        let alert = UIAlertController(title: "Change Profile Picture", message: nil, preferredStyle: .actionSheet)
+        
+        alert.addAction(UIAlertAction(title: "Take Photo", style: .default) { _ in
+            imagePickerType = .camera
+            showingImagePicker = true
+        })
+        
+        alert.addAction(UIAlertAction(title: "Choose Photo", style: .default) { _ in
+            imagePickerType = .photoLibrary
+            showingImagePicker = true
+        })
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        UIApplication.shared.windows.first?.rootViewController?.present(alert, animated: true, completion: nil)
     }
     
     private func saveProfile() {
@@ -139,12 +198,12 @@ struct ProfileView: View {
             if await authenticationViewModel.updateUser(firstName: editableFirstName, lastName: editableLastName, phone: editablePhone) {
                 isEditing = false
             } else {
-                // Handle error, maybe show an alert
                 print("Failed to update profile: \(authenticationViewModel.errorMessage)")
             }
         }
     }
 }
+
 
 private func formatDate(_ timeInterval: TimeInterval?) -> String {
     guard let timeInterval = timeInterval else { return "N/A" }
@@ -154,28 +213,6 @@ private func formatDate(_ timeInterval: TimeInterval?) -> String {
     return formatter.string(from: date)
 }
 
-struct InfoRow: View {
-    let title: String
-    let value: String
-    
-    var body: some View {
-        VStack(spacing: 0) {
-            HStack {
-                Text(title)
-                    .customFont(.light, 18)
-                Spacer()
-                Text(value)
-                    .customFont(.light, 18)
-            }
-            .padding()
-            
-            Divider()
-        }
-    }
-}
-
 #Preview {
-    NavigationView {
-        ProfileView()
-    }
+    ProfileView()
 }

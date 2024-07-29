@@ -12,6 +12,7 @@ import FirebaseFirestore
 import FirebaseAuth
 import GoogleSignIn
 import GoogleSignInSwift
+import FirebaseStorage
 
 enum AuthenticationState {
     case unauthenticated
@@ -39,6 +40,8 @@ class AuthenticationViewModel: ObservableObject {
     @Published var displayName = ""
     @Published var privacyChecked: Bool = false
     @Published var isEmailVerificationSent = false
+    @Published var showImagePicker = false
+    @Published var inputImage: UIImage?
     
     private var handler: AuthStateDidChangeListenerHandle?
     private var userListener: ListenerRegistration?
@@ -51,6 +54,52 @@ class AuthenticationViewModel: ObservableObject {
         self.handler = Auth.auth().addStateDidChangeListener { [weak self] _, user in
             DispatchQueue.main.async {
                 self?.currentUserId = user?.uid ?? ""
+            }
+        }
+    }
+}
+
+extension AuthenticationViewModel {
+    func uploadProfilePhoto() {
+        guard let inputImage = inputImage else { return }
+        
+        guard let imageData = inputImage.jpegData(compressionQuality: 0.8) else { return }
+        
+        let storageRef = Storage.storage().reference().child("profile_photos/\(currentUserId).jpg")
+        
+        let uploadTask = storageRef.putData(imageData, metadata: nil) { (metadata, error) in
+            guard let metadata = metadata else {
+                print("Error uploading image: \(error?.localizedDescription ?? "Unknown error")")
+                return
+            }
+            
+            storageRef.downloadURL { (url, error) in
+                guard let downloadURL = url else {
+                    print("Error getting download URL: \(error?.localizedDescription ?? "Unknown error")")
+                    return
+                }
+                
+                self.updateUserAvatarURL(url: downloadURL.absoluteString)
+            }
+        }
+    }
+
+    func updateUserAvatarURL(url: String) {
+        guard let userId = Auth.auth().currentUser?.uid else { return }
+        
+        let db = Firestore.firestore()
+        let userRef = db.collection(DHUserModelName.userFirestore).document(userId)
+        
+        userRef.updateData([
+            DHUserModelName.avatarURL: url,
+            DHUserModelName.lastUpdated: Date().timeIntervalSince1970,
+            DHUserModelName.editedBy: userId
+        ]) { error in
+            if let error = error {
+                print("Error updating user avatar URL: \(error.localizedDescription)")
+            } else {
+                print("User avatar URL successfully updated")
+                self.user?.avatarURL = url
             }
         }
     }
