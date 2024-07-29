@@ -11,6 +11,10 @@ struct ProfileView: View {
     @StateObject private var authenticationViewModel = AuthenticationViewModel()
     @StateObject private var tenantViewModel = TenantViewModel()
     @State private var showingDeleteConfirmation = false
+    @State private var isEditing = false
+    @State private var editableFirstName = ""
+    @State private var editableLastName = ""
+    @State private var editablePhone = ""
     @Environment(\.dismiss) private var dismiss
     
     var body: some View {
@@ -25,7 +29,7 @@ struct ProfileView: View {
                                 .resizable()
                                 .aspectRatio(contentMode: .fill)
                                 .frame(width: 100, height: 100)
-                                .clipShape(Rectangle())
+                                .clipShape(Circle())
                                 .shadow(radius: 20)
                             
                             Text(authenticationViewModel.user?.fullName ?? "Firstname Lastname")
@@ -34,7 +38,10 @@ struct ProfileView: View {
                                 .customFont(.light, 20)
                             
                             Button(action: {
-                                // Edit profile
+                                isEditing = true
+                                editableFirstName = authenticationViewModel.user?.firstName ?? ""
+                                editableLastName = authenticationViewModel.user?.lastName ?? ""
+                                editablePhone = authenticationViewModel.user?.phone ?? ""
                             }) {
                                 HStack {
                                     Image(systemName: "pencil")
@@ -97,12 +104,23 @@ struct ProfileView: View {
                         }
                     }
                 }
+                .opacity(isEditing ? 0.3 : 1)
                 .opacity(showingDeleteConfirmation ? 0 : 1)
                 
                 if showingDeleteConfirmation {
                     CustomDeleteAccountAlert(isPresented: $showingDeleteConfirmation) {
                         authenticationViewModel.delete()
                     }
+                }
+                
+                if isEditing {
+                    EditProfileView(
+                        isEditing: $isEditing,
+                        firstName: $editableFirstName,
+                        lastName: $editableLastName,
+                        phone: $editablePhone,
+                        onSave: saveProfile
+                    )
                 }
             }
             .onAppear {
@@ -112,6 +130,17 @@ struct ProfileView: View {
                 if let tenantId = authenticationViewModel.user?.tenantId {
                     tenantViewModel.fetchTenantName(for: tenantId)
                 }
+            }
+        }
+    }
+    
+    private func saveProfile() {
+        Task {
+            if await authenticationViewModel.updateUser(firstName: editableFirstName, lastName: editableLastName, phone: editablePhone) {
+                isEditing = false
+            } else {
+                // Handle error, maybe show an alert
+                print("Failed to update profile: \(authenticationViewModel.errorMessage)")
             }
         }
     }

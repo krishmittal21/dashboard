@@ -52,6 +52,7 @@
 		CCBB26D62C5743DB00235436 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBB26D52C5743DB00235436 /* ProfileView.swift */; };
 		CCBB26D82C57453400235436 /* TenantViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBB26D72C57453400235436 /* TenantViewModel.swift */; };
 		CCBB26DA2C57525600235436 /* CustomDeleteAccountAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBB26D92C57525600235436 /* CustomDeleteAccountAlert.swift */; };
+		CCBB26DC2C57550F00235436 /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBB26DB2C57550F00235436 /* EditProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,6 +95,7 @@
 		CCBB26D52C5743DB00235436 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		CCBB26D72C57453400235436 /* TenantViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TenantViewModel.swift; sourceTree = "<group>"; };
 		CCBB26D92C57525600235436 /* CustomDeleteAccountAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDeleteAccountAlert.swift; sourceTree = "<group>"; };
+		CCBB26DB2C57550F00235436 /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,11 +199,12 @@
 			isa = PBXGroup;
 			children = (
 				CCBB26D42C573FAC00235436 /* Empty Views */,
-				CCBB26D32C573F8900235436 /* Navigation */,
 				CCBB26B92C56A5E300235436 /* Authentication */,
+				CCBB26D32C573F8900235436 /* Navigation */,
 				CCAB454D2C568EB900298C7A /* DashboardView.swift */,
 				CCBB26C12C573A2100235436 /* GalleryView.swift */,
 				CCBB26D52C5743DB00235436 /* ProfileView.swift */,
+				CCBB26DB2C57550F00235436 /* EditProfileView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -390,6 +393,7 @@
 				CCBB26DA2C57525600235436 /* CustomDeleteAccountAlert.swift in Sources */,
 				CCBB26CA2C573E9000235436 /* TabContentView.swift in Sources */,
 				CCBB26D22C573F0200235436 /* MenuItems.swift in Sources */,
+				CCBB26DC2C57550F00235436 /* EditProfileView.swift in Sources */,
 				CCBB26C42C573A3000235436 /* AchievementView.swift in Sources */,
 				CCBB26C22C573A2100235436 /* GalleryView.swift in Sources */,
 				CCAB45152C564C1400298C7A /* ColorExtension.swift in Sources */,
