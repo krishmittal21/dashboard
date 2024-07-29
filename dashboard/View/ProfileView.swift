@@ -97,35 +97,31 @@ struct ProfileView: View {
                         }
                     }
                 }
-                .alert(isPresented: $showingDeleteConfirmation) {
-                    Alert(
-                        title: Text("Delete your account?"),
-                        message: Text("You will lose all of your data by deleting your account. This includes all of your images and any other data on our servers. This action cannot be undone."),
-                        primaryButton: .destructive(Text("Delete My Account")) {
-                            authenticationViewModel.delete()
-                        },
-                        secondaryButton: .cancel(Text("No Do Not Delete and Go Back"))
-                    )
-                }
-                .onAppear {
-                    authenticationViewModel.fetchUser()
-                }
-                .onChange(of: authenticationViewModel.user?.tenantId) {
-                    if let tenantId = authenticationViewModel.user?.tenantId {
-                        tenantViewModel.fetchTenantName(for: tenantId)
+                
+                if showingDeleteConfirmation {
+                    CustomDeleteAccountAlert(isPresented: $showingDeleteConfirmation) {
+                        authenticationViewModel.delete()
                     }
+                }
+            }
+            .onAppear {
+                authenticationViewModel.fetchUser()
+            }
+            .onChange(of: authenticationViewModel.user?.tenantId) {
+                if let tenantId = authenticationViewModel.user?.tenantId {
+                    tenantViewModel.fetchTenantName(for: tenantId)
                 }
             }
         }
     }
-    
-    private func formatDate(_ timeInterval: TimeInterval?) -> String {
-        guard let timeInterval = timeInterval else { return "N/A" }
-        let date = Date(timeIntervalSince1970: timeInterval)
-        let formatter = DateFormatter()
-        formatter.dateFormat = "MMMM d'th' yyyy"
-        return formatter.string(from: date)
-    }
+}
+
+private func formatDate(_ timeInterval: TimeInterval?) -> String {
+    guard let timeInterval = timeInterval else { return "N/A" }
+    let date = Date(timeIntervalSince1970: timeInterval)
+    let formatter = DateFormatter()
+    formatter.dateFormat = "MMMM d'th' yyyy"
+    return formatter.string(from: date)
 }
 
 struct InfoRow: View {
