@@ -15,7 +15,7 @@ enum MenuItems: Int, CaseIterable {
     
     var iconName: String {
         switch self {
-        case .documents: return "doc"
+        case .documents: return "clipboard"
         case .projects: return "triangle"
         case .achievements: return "trophy"
         case .gallery: return "camera"
